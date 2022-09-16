@@ -80,7 +80,9 @@ Browser.site = 'https://boilerplate-mochachai.deisymar.repl.co'; // Your URL her
 suite('Functional Tests with Zombie.js', function () {
  
   const browser = new Browser(); 
-
+  suiteSetup(function(done) {
+     return browser.visit('/', done);
+  });	
   this.timeout(5000);
   
   suite('Headless browser', function () {
